@@ -1,0 +1,41 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: "helloworld-eap-build-artifacts"
+spec:
+  runPolicy: "Serial"
+  source:
+    images:
+      - from:
+          kind: "DockerImage"
+          name: "quay.io/jnirosha/s2i-jboss-artifacts:latest"
+        paths:
+          - destinationDir: "."
+            sourcePath: "/deployments"
+          - destinationDir: "configuration"
+            sourcePath: "/configuration"
+          - destinationDir: "modules"
+            sourcePath: "/modules"
+  strategy:
+    sourceStrategy:
+      incremental: true
+      env:
+        - name: ARTIFACT_DIR
+        - name: GALLEON_PROVISION_LAYERS
+        - name: GALLEON_PROVISION_DEFAULT_FAT_SERVER
+          value: "true"
+      from:
+        kind: "ImageStreamTag"
+        name: "eap74-openjdk8-openshift-rhel7:7.4.1"
+        namespace: "openshift"
+  output:
+    to:
+      kind: "ImageStreamTag"
+      name: "s2i-jboss-artifacts:latest"
+  triggers:
+    - type: ConfigChange
+    - imageChange:
+      from:
+        kind: ImageStreamTag
+        name: eap74-openjdk8-openshift-rhel7:7.4.1
+        namespace: openshift

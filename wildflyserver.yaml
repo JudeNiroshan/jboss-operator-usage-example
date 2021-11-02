@@ -1,0 +1,7 @@
+apiVersion: wildfly.org/v1alpha1
+kind: WildFlyServer
+metadata:
+  name: helloworld
+spec:
+  applicationImage: 'image-registry.openshift-image-registry.svc:5000/eap-demo/helloworld-eap:latest'
+  replicas: 3

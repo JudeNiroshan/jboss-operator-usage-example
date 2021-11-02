@@ -1,0 +1,41 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: helloworld-eap
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: helloworld-eap:latest
+  runPolicy: Serial
+  source:
+    dockerfile: |-
+      FROM openshift/eap74-openjdk8-runtime-openshift-rhel7:7.4.1
+      COPY /server $JBOSS_HOME
+      USER root
+      RUN chown -R jboss:root $JBOSS_HOME && chmod -R ug+rwX $JBOSS_HOME
+      USER jboss
+      CMD $JBOSS_HOME/bin/openshift-launch.sh
+    images:
+    - from:
+        kind: ImageStreamTag
+        name: s2i-jboss-artifacts:latest
+      paths:
+      - destinationDir: .
+        sourcePath: /s2i-output/server/
+    type: Dockerfile
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: eap74-openjdk8-runtime-openshift-rhel7:7.4.1
+        namespace: openshift
+      imageOptimizationPolicy: SkipLayers
+    type: Docker
+  triggers:
+  - imageChange:
+      from:
+        kind: ImageStreamTag
+        name: s2i-jboss-artifacts:latest
+    type: ImageChange
+  - type: ConfigChange
