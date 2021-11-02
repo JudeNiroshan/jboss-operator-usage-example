@@ -6,15 +6,15 @@ We will be using 2 different BuildConfig objects.
 - buildConfig-02.yaml
 
 
-#### configuration
+#### configuration 📁
 
 This folder will be copied into the JBoss server deployments/configurations directory.
 
-#### modules
+#### modules 📁
 
 This folder will be copied into the JBoss server deployments/modules directory.
 
-#### deployments
+#### deployments 📁
 
 Your application final artifacts. It could be a .war file or any other deployable unit that you usually deploy into
 JBoss server /deployments directory.
