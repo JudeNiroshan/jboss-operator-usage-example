@@ -45,7 +45,7 @@ docker push quay.io/jnirosha/s2i-jboss-artifacts
 This image stream will be referenced in the buildConfig-01 to push the resulting container image.
 It is also referenced in buildConfig-02 as a source image.
 
-- According to the buildConfig-01.yaml, imageStream should name as `s2i-jboss-artifacts`
+- According to the [buildConfig-01.yaml](https://github.com/JudeNiroshan/jboss-operator-usage-example/blob/089f07cd24959558bc716604ce3ba2da8758cbd1/buildConfig-01.yaml#L34), imageStream should name as `s2i-jboss-artifacts`
 
 #### Ready to use ImageStream
 
