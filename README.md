@@ -1,4 +1,4 @@
-# JBoss-operator Usage Example
+# JBoss-Operator Usage Example
 This is an example which demonstrate how to deploy JBoss servers using eap-operator in OCP
 
 We will be using 2 different BuildConfig objects.
