@@ -20,7 +20,7 @@ Your application final artifacts. It could be a .war file or any other deployabl
 JBoss server /deployments directory.
 
 
-##Steps:
+## Steps:
 
 ### 1. Create your container image
 You can either use podman/docker to build the container image
