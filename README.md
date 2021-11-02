@@ -52,7 +52,7 @@ It is also referenced in buildConfig-02 as a source image.
 This image stream will be referenced by the operator wildflyserver instance. It is also
 referenced in buildConfig-02 as an output to push the resulting container.
 
-- According to the [wildflyserver.yaml](https://github.com/JudeNiroshan/jboss-operator-usage-example/blob/79d83ef4ec136fe5d84d23acb98eee17100cbdb4/wildflyserver.yaml#L6) and buildConfig-02.yaml, imageStream should name as `helloworld-eap`
+- According to the [wildflyserver.yaml](https://github.com/JudeNiroshan/jboss-operator-usage-example/blob/79d83ef4ec136fe5d84d23acb98eee17100cbdb4/wildflyserver.yaml#L6) and [buildConfig-02.yaml](https://github.com/JudeNiroshan/jboss-operator-usage-example/blob/1f620cbbe226c6d96dbc6055841eb2121508cc59/buildConfig-02.yaml#L9), imageStream should name as `helloworld-eap`
 
 ### 4. Connect to OCP cluster from your terminal
 Login to OCP console and grab a token and run the `oc login ...`
