@@ -1,10 +1,8 @@
 # JBoss-Operator Usage Example
 This is an example which demonstrate how to deploy JBoss servers using eap-operator in OCP
+![](./docs/overview.png)
 
-We will be using 2 different BuildConfig objects.
-- buildConfig-01.yaml
-- buildConfig-02.yaml
-
+### Directory structure 
 
 #### configuration 📁
 
