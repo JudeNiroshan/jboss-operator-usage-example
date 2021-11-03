@@ -32,12 +32,12 @@ Build the image while tagging the container image by the quay.io public reposito
 docker build -t quay.io/jnirosha/s2i-jboss-artifacts . 
 ```
 
-### 2. Push the container image to a container registry
+### 1.1. Push the container image to a container registry
 ```
 docker push quay.io/jnirosha/s2i-jboss-artifacts
 ```
 
-### 3. Create ImageStream objects in OCP
+### 2. Create ImageStream objects in OCP
 #### Artifact ImageStream
 
 This image stream will be referenced in the buildConfig-01 to push the resulting container image.
@@ -52,10 +52,10 @@ referenced in buildConfig-02 as an output to push the resulting container.
 
 - According to the [wildflyserver.yaml](https://github.com/JudeNiroshan/jboss-operator-usage-example/blob/79d83ef4ec136fe5d84d23acb98eee17100cbdb4/wildflyserver.yaml#L6) and [buildConfig-02.yaml](https://github.com/JudeNiroshan/jboss-operator-usage-example/blob/1f620cbbe226c6d96dbc6055841eb2121508cc59/buildConfig-02.yaml#L9), imageStream should name as `helloworld-eap`
 
-### 4. Connect to OCP cluster from your terminal
+### 3. Connect to OCP cluster from your terminal
 Login to OCP console and grab a token and run the `oc login ...`
 
-### 5. Submit buildConfig resource definitions to OCP
+### 4. Submit buildConfig resource definitions to OCP
 
 Once you connected and switched correct OCP project, you can 
 run below commands one after the other.
@@ -71,6 +71,12 @@ created image streams and create the final deployable container image
 which will be eventually pushed to
 
 `image-registry.openshift-image-registry.svc:5000/<<ocp-project>>/helloworld-eap@sha256:d6e5d24b930e93a028fb597efd...`
+
+### 5. Create WildFlyServer instance
+
+```
+oc apply -f wildflyserver.yaml
+```
 
 ### 6. Verify you can access the application
 
