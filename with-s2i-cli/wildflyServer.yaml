@@ -1,0 +1,7 @@
+apiVersion: wildfly.org/v1alpha1
+kind: WildFlyServer
+metadata:
+  name: helloworld
+spec:
+  applicationImage: 'quay.io/jnirosha/s2i-jboss-with-cli:latest'
+  replicas: 3

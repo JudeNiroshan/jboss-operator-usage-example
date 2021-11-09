@@ -23,7 +23,7 @@ spec:
       paths:
       - destinationDir: .
         sourcePath: /s2i-output/server/
-    type: Dockerfile
+    type: containerFile
   strategy:
     dockerStrategy:
       from:
