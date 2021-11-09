@@ -9,7 +9,7 @@ We are using [this containerFile](./containerFile) to containerize the
 application runnable artifact and other necessary JBoss config files.
 
 
-![](../docs/overview.png)
+![](docs/overview.png)
 
 ### Directory structure 
 
