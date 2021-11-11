@@ -1,11 +1,11 @@
-## Red Hat Middleware EAP-Operator usage with S2i-CLI
+## Red Hat Middleware EAP-Operator usage with s2i-CLI
 
 We are focusing a simple hello world REST API example project. We will 
 be deploying this application into Openshift using Red Hat Middleware EAP-Operator.
 
 ![](./docs/overview.png)
 
-### 1. Install EAP-operator in your cluster
+### 1. Install EAP-Operator into your cluster
 
 Login to Openshift console and under administrator tab, operators can
  be installed under `Operators -> Install`
