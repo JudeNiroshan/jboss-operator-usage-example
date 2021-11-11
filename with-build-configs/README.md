@@ -1,12 +1,12 @@
-# JBoss-Operator Usage Example
+# Red Hat Middleware EAP-Operator usage with Openshift BuildConfigs
 
-We will be deploying our application into Openshift using EAP-operator.
+We will be deploying our application into Openshift using Red Hat Middleware EAP-operator.
 
 We are focusing a simple hello world REST API example project. 
 Application runtime artifact has already built it and placed [here](./deployments).
 
 We are using [this containerFile](./containerFile) to containerize the 
-application runnable artifact and other necessary JBoss config files.
+application runnable artifact and other necessary Red Hat Middleware EAP config files.
 
 
 ![](docs/overview.png)
@@ -24,7 +24,7 @@ This folder will be copied into the JBoss server deployments/modules directory.
 #### deployments 📁
 
 Your application final artifacts. It could be a .war file or any other deployable unit that you usually deploy into
-JBoss server /deployments directory.
+EAP server /deployments directory.
 
 
 ## Steps:
