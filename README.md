@@ -4,7 +4,7 @@ There are multiple ways we can configure continuous deployment(CD) strategies
 to deploy Java EE applications using Red Hat Middleware EAP operator in Openshift.
 
 ### 1. Using buildConfigs in Openshift
-In this approach, we expect you have already created a container image 
+In this approach, we expect that you have already created a container image 
 according to your needs.
 
 👉🏽 [Follow this guide for bc(build-config) approach](./with-build-configs/)
